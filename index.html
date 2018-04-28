@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8"/>
+	<title>HTML5 Responsive Rich Media Banner</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=0" />
+    <script>
+        EBModulesToLoad = ['EBCMD'];
+    </script>
+	<script type="text/javascript" src="http://ds.serving-sys.com/BurstingScript/adKit/adkit.js"></script>
+
+	<!-- COMMENT THIS LINE OUT PRIOR TO UPLOADING / UNCOMMENT FOR LOCAL TESTING ONLY -->
+	<script type="text/javascript" src="scripts/localPreview.js"></script>
+</head>
+
+<body>
+
+<style id="adStyles">
+
+/* ------------------------------------------------------------ */
+/* -----> RESET.CSS INCLUDED HERE TO REDUCE SERVER CALLS <----- */
+/* ------------------------------------------------------------ */
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, hr, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figure, figcaption, hgroup, menu, footer, header, nav, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; } article, aside, canvas, figure, figure img, figcaption, hgroup, footer, header, nav, section, audio, video { display: block; } a img {border: 0;}
+
+/* --------------------------------------------- */
+/* -----> FONT IMPORTS PER REFERENCE FILE <----- */
+/* --------------------------------------------- */
+@import url(https://fast.fonts.net/t/1.css?apiType=ad&projectid=21dfec3a-67e2-4918-9142-bfaf8a92f03f);
+  @font-face{font-family:"Proxima N W01 Reg";
+  src:url(https://apiadn.fonts.com/v2/fonts/subset?x=aEQPPHegxpcMofj1Jp1tYXKqiOi9p687nKTqLsOq73tJQoR0ctMtTzsiZt8wVkyywZljis6XqhTOA87xBh2gII4u354RCpSLWvyOsTpDWSwYqZebhMSWmmB1fRC4gv4mw%2bgNckgkXbWXsUdbthhC8DaHdyfU7SRnJWmmYlaPg8E%3d);
+  src:url(https://apiadn.fonts.com/v2/fonts/subset?x=aEQPPHegxpcMofj1Jp1tYXKqiOi9p687nKTqLsOq73tJQoR0ctMtTzsiZt8wVkyywZljis6XqhTOA87xBh2gII4u354RCpSLWvyOsTpDWSwYqZebhMSWmmB1fRC4gv4mw%2bgNckgkXbWXsUdbthhC8DaHdyfU7SRnJWmmYlaPg8E%3d#iefix) format("eot"),url(https://apiadn.fonts.com/v2/fonts/subset?x=bnlTGL%2flyERMvMB5KGT1XBXveOQr4%2f%2bsI8BXrDMbjKe%2fF%2fL%2bj0ydN4duUIuaJlKXIIeTW0CRI%2fxdcolu2oF2vGuxRdnwi3evMn0sJDUojwrNdOaEOnIGgnsirqykyQ5WF7nSFsayiEBjIUQedsS%2ftSfTxGgByozSb5GNszYPHG8%3d) format("woff2"),url(https://apiadn.fonts.com/v2/fonts/subset?x=7lOozVx17sBSzsSHZRAsBC1QzJejLKkoqlkZJJA7s5wDJrO6eUaNgLBUCc3UDRmiWlHxWEy%2bHKcjWobUn06eTgU7LoeE7jT8pPX35hzyd2hUVGY3c%2fV7UCJBagiDRKvps9xb6oxPVgoBNrCrFuuDCGuYWsPDI0cUA7DsHslAy6o%3d) format("woff"),url(https://apiadn.fonts.com/v2/fonts/subset?x=YdU1Gas3Kn1GLOFex%2fIYiPq%2fAYSzutipKMkVmBE2Aiv46sUG8HgSPatrkyifHCf7eJaVv1qkqX6BQCC8Sq3HcRN2tMuoqzgXV%2bBJ4wTSScRK9XVKhCeDCO2TGwwWiHBWJmJxF7X0timAIhkGq8v%2bDQvO02r3FUEnxmQpNDF0w%2fQ%3d) format("truetype")}
+  @font-face{font-family:"Proxima N W02 Bold";
+  src:url(https://apiadn.fonts.com/v2/fonts/subset?x=3m9sZXQqzMRmVlycd6e8QzKwa6vl4y002J4aBR1aKDSyu2Ocz0RsIiawLUEx5xq56KII8cd2WTai5kabaKAkw7oG4uv9a6fJ1gv533XGp3H9kzQik0Je2ND%2fvD%2bZVkl6kETg4NsfrV4NHWrsLDP5hiiYHLMFm2k3GpQboFeQcmU%3d);
+  src:url(https://apiadn.fonts.com/v2/fonts/subset?x=3m9sZXQqzMRmVlycd6e8QzKwa6vl4y002J4aBR1aKDSyu2Ocz0RsIiawLUEx5xq56KII8cd2WTai5kabaKAkw7oG4uv9a6fJ1gv533XGp3H9kzQik0Je2ND%2fvD%2bZVkl6kETg4NsfrV4NHWrsLDP5hiiYHLMFm2k3GpQboFeQcmU%3d#iefix) format("eot"),url(https://apiadn.fonts.com/v2/fonts/subset?x=1jA8a6kaT0NuM7%2bf3PrZlFxldvUathMnC%2f592lbImbxX%2bOOLy907FNTWTVYORp7aeZJX%2btakG%2f%2fq0iQx0DcUwTKZzUUBh4qngYv0%2fYfQFtZIqulpn%2bAo3nzeRj06oxR0Q%2fkhqK4Bf9x9V2Op18nDmDRhuvxT3Q1IZdk1FjfIpQk%3d) format("woff2"),url(https://apiadn.fonts.com/v2/fonts/subset?x=nzdUhcdHlj0pVBSBB89zTJ0%2fCPooMF5f5g8qZykOr91eS1u37i6ARGaTPm%2fj5Cq1AH6duCKKlhibgGZWaf3NzJ6jHFPFziUNo4fjXJqpJpRncwALwwvDbYPsJPEE9QGFigqBAmcOr8ev2E6jZZw7sIhuxg6xhyrf16kPX0b4jVY%3d) format("woff"),url(https://apiadn.fonts.com/v2/fonts/subset?x=KPD8T4ogq%2bRh4h2g11CLb%2b3Y%2fhJq8zFkyeIAzOe5sxmw1hm1gPgZXzeSGjeaBYPzKsAN4x9wHKYrI1EARYHn7zFO1EMrgMI%2fgV0BmmzJWxR2ILwhNs1lt%2b2Oyh1tFejS8rPCR5IjRxz8MOrmgtX3MV%2bK1RsAj0G3VrVZ2BEh9As%3d) format("truetype")}
+  @font-face{font-family:"Proxima N W02 Smbd";
+  src:url(https://apiadn.fonts.com/v2/fonts/subset?x=wt0z0ND%2fdjdWsmIUOO6vXq1qtPwCMYyUOGnyXvVBJ4eB%2f4iajAbNUvXJ13ifoOJCpMq28VCdpA1IcuurYjN5h9gemMTpvwhW8JlYNvNvdwyxpA1JJhvIgSEntpbeP9ydHsDLNL5lzqf5Wm3dURpTnx5ZFNVlS7%2bUCdOXz9WA84k%3d);
+  src:url(https://apiadn.fonts.com/v2/fonts/subset?x=wt0z0ND%2fdjdWsmIUOO6vXq1qtPwCMYyUOGnyXvVBJ4eB%2f4iajAbNUvXJ13ifoOJCpMq28VCdpA1IcuurYjN5h9gemMTpvwhW8JlYNvNvdwyxpA1JJhvIgSEntpbeP9ydHsDLNL5lzqf5Wm3dURpTnx5ZFNVlS7%2bUCdOXz9WA84k%3d#iefix) format("eot"),url(https://apiadn.fonts.com/v2/fonts/subset?x=u0tNb2sdJWaRi%2b4hqjxTTzB%2f8nmJQt%2fEcqOKtiV67VzasOTDgXCQ28zU9bRO5OVdCaAk7C5I8f7deeHeQaJVF%2fiWMjvuE%2bKVdtojR4VDuYjlNLbN3In%2beBBhYbXSyKtrOmnyG6lk2KMvgTYJ24bq1WHVqYmVb7FoOeD7I1LfGrw%3d) format("woff2"),url(https://apiadn.fonts.com/v2/fonts/subset?x=cXybx6EtjJgxMPFEs3rQmqRA6uTaSI2YrmI6040oS2qN3%2b6%2fhJvSMeO9IdbyhhWh5%2btjwBBYmxHZJCBx4ssg5FYCsr4WWtTWolGFbA6L%2fEqNXJrOnLSidhERjEKmkDvjHlA1Tx87zuqlLhgpEradmeTJ6bY0TXQ6IdTxR3vu6p4%3d) format("woff"),url(https://apiadn.fonts.com/v2/fonts/subset?x=PJsSGUv6%2fUtao1%2bt4ykLCOIhXuvQSsoAfnsxkh0ro3loHePTLvUYqPRKrFAo4DvV9MfRfkMbBmM4UVJ%2fGv8BmGAVOLM8GaKUG%2fKGKiKx5NzZItP1NM9na%2bxyBpSQlZl9LZ75ZLApPwXorbxxMQk6GOW%2fp3qGn6Nee0Cbu1kyhDg%3d) format("truetype")}
+
+/* ------------------------------------------------------------------- */
+/* -----> BODY STYLE TO PREVENT FONT SCALLING ON MOBILE DEVICES <----- */
+/* ------------------------------------------------------------------- */
+body{
+    -webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-text-size-adjust: none;
+    zoom: 100%;
+}
+
+/* --------------------- */
+/* -----> GENERAL <----- */
+/* --------------------- */
+#adWrapper{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    visibility: hidden;
+    opacity: 0;
+}
+
+#headerBacker{
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: #FFF;
+}
+
+#adContainer{
+    width: 100%;
+    height: 100%;
+    /*height: 0;
+    padding-top: calc(3 / 2 * 100% + 40px);*/
+    position: absolute;
+    top: 0px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-color: #FFF;
+    cursor: pointer;
+    font-family: "Proxima N W01 Reg";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow: hidden;
+}
+
+/* --------------------------------------------------- */
+/* -----> HEADER / ADVERTISEMENT INDICATOR AREA <----- */
+/* --------------------------------------------------- */
+#headerContainer{
+    width: 100%;
+    height: 40px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    font-size: 11px;
+    line-height: 11px;
+    background-color: #FFF;
+    cursor: default;
+}
+#adIndicatorCopy{
+    color: #000;
+    font-family: "Proxima N W02 Bold";
+    margin-left: 15px;
+}
+#adIndicatorCopy_dynamic{
+    color: #000;
+    font-family: "Proxima N W01 Reg";
+}
+
+/* ------------------------------- */
+/* -----> MAIN CONTENT AREA <----- */
+/* ------------------------------- */
+#contentContainer{
+    width: 100%;
+    position: absolute;
+    top: 40px;
+    left: 0px;
+}
+
+#mobileBgImg{
+    width: 100%;
+    /*max-width: 414px;*/
+    height: 100%;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    /* background-size: 100%; */
+    background-size: cover;
+    /* background-position: top center; */
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#bgGrad{
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    pointer-events: none;
+    display: none;
+
+    background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7) 100%);
+    background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.7) 100%);
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.7) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#b3000000',GradientType=0 );
+}
+
+#mobileLogo{
+    position: absolute;
+    margin: 15px;
+    width: auto;
+    height: 50px;
+    max-width: 130px;
+    max-height: 50px;
+    display: none;
+}
+#mobileLogo img{
+    width: auto;
+    height: 50px;
+    max-width: 130px;
+    max-height: 50px;
+}
+
+#mobileBottomContaintContainer{
+    width: calc(100% - 30px);
+    height: auto;
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    pointer-events: none;
+}
+
+#mobileCopyContainer{
+    width: auto;
+    height: auto;
+    pointer-events: none;
+}
+#mobileHeadlineCopy{
+    color: #FFF; /*placeholder*/
+    font-family: "Proxima N W02 Smbd";
+    pointer-events: auto;
+    display: none;
+}
+#mobileDescriptorCopy{
+    margin: 3px 0 0 0;
+    color: #FFF; /*placeholder*/
+    font-family: "Proxima N W01 Reg";
+    padding-top: 4px;
+    pointer-events: auto;
+    display: none;
+}
+
+#mobileCta{
+    width: auto;
+    max-width: 158px;
+    height: 38px;
+    max-height: 38px;
+    margin: 14px 0 0 0;
+    border: 1px solid #FFF;
+    background-color: rgba(0,0,0,0.5);
+    color: #FFF; /*placeholder*/
+    text-align: center;
+    font-size: 15px;
+    line-height: 15px;
+    font-family: "Proxima N W02 Bold";
+    pointer-events: auto;
+}
+#mobileCtaCopy{
+    padding: 0 14px 0 14px;
+}
+
+/* ----- > BORDERS <----- */
+.borderTop{
+	width: 100%;
+	height: 1px;
+	left: 0px;
+	top: 0px;
+}
+.borderLeft{
+	width: 1px;
+	height: 100%;
+	left: 0px;
+	top: 0px;
+}
+.borderRight{
+	width: 1px;
+	height: 100%;
+	right: 0px;
+	top: 0px;
+}
+.borderBottom{
+	width: 100%;
+	height: 1px;
+	left: 0px;
+	bottom: 0px;
+}
+.contentBorder{
+	position: absolute;
+    z-index: 99999;
+    display: none;
+}
+
+/* -------------------- */
+/* -----> SHARED <----- */
+/* -------------------- */
+.genClk{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+
+/*---------------------------------------*/
+/*-----> MEDIA QUERY SIZING STYLES <-----*/
+/*---------------------------------------*/
+
+/*-----> MOBILE SIZINGS <-----*/
+/*----------------------------*/
+
+/* Copy size adjustment mobile break points */
+@media(min-width: 0px) and (max-width: 374px){
+    /* -------------------------- */
+    /* -----> MOBILE  COPY <----- */
+    /* -------------------------- */
+    #mobileHeadlineCopy{
+        font-size: 24px;
+        line-height: 25px;
+    }
+    #mobileDescriptorCopy{
+        font-size: 15px;
+        line-height: 16px;
+    }
+}
+/* @media(min-width: 375px) and (max-width: 700px){ */
+@media(min-width: 375px){
+    /* -------------------------- */
+    /* -----> MOBILE  COPY <----- */
+    /* -------------------------- */
+    #mobileHeadlineCopy{
+        font-size: 27px;
+        line-height: 28px;
+    }
+    #mobileDescriptorCopy{
+        font-size: 18px;
+        line-height: 19px;
+    }
+}
+
+</style>
+<div id="adWrapper">
+	<div id="headerBacker"></div>
+    <div id="adContainer">
+        <div id="headerContainer">
+            <div id="adIndicatorCopy">ADVERTISEMENT: <span id="adIndicatorCopy_dynamic">PLACEHOLDER</span></div>
+        </div>
+        <div id="contentContainer">
+			<!-- MOBILE -->
+			<div id="mobileContainer" class="mobile">
+				<div id="mobileBgImg" class="mobile">
+					<div id="bgGrad"></div>
+				</div>
+				<div class="genClk"></div>
+				<div id="mobileLogo">
+	                <img src="">
+	            </div>
+				<div id="mobileBottomContaintContainer">
+					<div id="mobileCopyContainer">
+						<div id="mobileHeadlineCopy"></div>
+						<div id="mobileDescriptorCopy"></div>
+					</div>
+		            <div id="mobileCta">
+		                <div id="mobileCtaCopy">PLACEHOLDER</div>
+		            </div>
+				</div>
+			</div>
+			<!--BORDER-->
+			<div class='borderTop contentBorder'></div>
+		    <div class='borderLeft contentBorder'></div>
+		    <div class='borderRight contentBorder'></div>
+		    <div class='borderBottom contentBorder'></div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+/*------------------------*/
+/*-----> VARIABLES  <-----*/
+/*------------------------*/
+var creativeId = "HTMLResponsiveRichMediaBanner";
+var creativeVersion = "1.1.0";
+var lastModified = "2017-02-07";
+var lastUploaded = "2017-02-07";
+var templateVersion = "2.0.24";
+var templateName = "cf_deluxe_banner_mobile_flex_xl_1x1_" + creativeVersion + "_6266"; // cf_[format_name]_[template_name]_[wxh]_version_BlockID
+var scrollPos = {
+	x: undefined,
+	y: undefined
+};
+var adId, rnd, uid;
+
+var isMobile = (/Mobi/i).test(navigator.userAgent);
+
+var USE_RESIZE_LISTENER = false;
+
+/*------------------------------*/
+/*-----> TEMPLATE CONFIG  <-----*/
+/*------------------------------*/
+var creativeConfigObj = {
+	// List the dynamic portion of the advertisement indicator only. “Advertisement: ” is set in the HTML.
+	adIndicatorDynamicCopy: "PLACEHOLDER DESCRIPTOR",
+
+	// portraitFitStyle - Sets the content sizing behavior of the creative in portrait orientation only.
+	// Setting 2:3 will maintain the standard 2:3 aspect ratio at the largest size possible in the available area and flood fill the remainder on the left & right sides or bottom as required.
+	// Setting fullWidth will display the same as 2:3 with the following exceptions:
+	//		1) The creative content area will become full width.
+	//		2) As the content area is no longer a set aspect ratio, the background image will crop as necessary cover while maintaining the image assets original aspect ratio of 2:3.
+	//		3) Flood fill, if required, will only populate to the bottom of the creative content.
+	// Acceptable values are "2:3" or "fullWidth" - any other value will default to "2:3" creative behavior.
+	portraitFitStyle: "fullWidth",
+
+	// Creative content boarder color.
+	// Boarder is one pixel.
+	// Boarder will only display if a color value is listed.
+	boarderColor: null,
+
+	// Background fill color when 2:3 aspect ratio creative content does not fill entire available area.
+	// Any valid CSS color value is acceptable.
+	floodColor: "#000",
+
+	// background image optimal size = 2:3 aspect ratio. Images will be set to 100% stretched/cropped as required.
+	backgroundImageURL: "images/bg.jpg",
+
+	// Only the logo src URL and height are required.
+	// With will adjust as required to accomidate the height listed.
+	// Logo is set to a fixed 15px left and top padding as requested in creative specs.
+	// If logo is not requred set to blank string or null.
+	logo: {
+		logoURL: "images/logo.png"
+	},
+
+	// headline = 3 lines max.
+	// description = 2 lines max.
+	// To add line breaks to the below copy please use a standard HTML line break tag, </br>
+	// If headline or description is not requred set to blank string or null.
+	copy: {
+		headline: {
+			copy: "Headline copy here </br> 3 lines max",
+			color: "#FFF"
+		},
+		description: {
+			copy: "Descriptor copy here </br> 2 lines max",
+			color: "#FFF"
+		}
+	},
+
+	// Mobile layout CTA will auto size in both width and height with a max width of the unit current width - 30px ( 15px padding from creative edges required per creative specs x2 ).
+	// If no CTA is requred set to blank string or null.
+	cta: {
+		copy: "CALL TO ACTION",
+		color: "#FFF",
+		borderColor: "#FFF"
+	}
+}
+/*-----> END TEMPLATE CONFIG  <-----*/
+
+
+/*----------------------------*/
+/*-----> INITIALIZATION <-----*/
+/*----------------------------*/
+function checkIfAdKitReady(event) {
+	try {
+		if (window.localPreview) {
+			adkit.onReady(function() {
+				window.initializeLocalPreview(); // In localPreview.js
+				USE_RESIZE_LISTENER = true;
+				initializeCreative();
+			});
+			return;
+		}
+	} catch (e) {}
+
+	// below comment by MSD
+	// adkit.onReady(initializeCreative);
+
+	// START ADD BY MSD
+	if (window.adkit) {
+		adkit.onReady(initializeCreative);
+	} else {
+		initializeCreative();
+	}
+	// END ADD BY MSD
+}
+
+function initializeCreative(event) {
+	var viewportMeta = document.querySelector('meta[name="viewport"]');
+	viewportMeta.setAttribute("content", "width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=0");
+
+	window.setTimeout(function(e) {
+		viewportMeta.setAttribute("content", "width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=0");
+	}, 500);
+
+	//Workaround (from QB6573) for Async EB Load where Modernizr isn't properly initialized
+	typeof Modernizr == "object" && (Modernizr.touch = Modernizr.touch || "ontouchstart" in window);
+
+	EBG.pm.bind("sendCreativeId", function() {
+		eventManager.apply(this, arguments);
+	}, this);
+	EBG.pm.bind("eventCallback", function() {
+		eventManager.apply(this, arguments);
+	}, this);
+
+	initializeGlobalVariables();
+	setCreativeVersion();
+
+	//-->
+
+	setCreativeElements();
+	addEventListeners();
+	positionCreativeElements();
+
+	window.setTimeout(function(e) {
+		document.getElementById("adWrapper").style.visibility = "visible";
+		document.getElementById("adWrapper").style.opacity = "1";
+		positionCreativeElements();
+	}, 250);
+}
+
+function initializeGlobalVariables() {
+	adId = EB._adConfig.adId;
+	rnd = EB._adConfig.rnd;
+	uid = EB._adConfig.uid;
+}
+
+/*-----------------------*/
+/*-----> FUNCTIONS <-----*/
+/*-----------------------*/
+
+/*-----> SET UP <-----*/
+function setCreativeElements() {
+	// Size creative area peravailable total area so 2:3 aspect ratio cretive content will not overflow the available screen space.
+	sizeContentArea(null);
+
+	// set bg overflow flood fill color
+	document.getElementById("adWrapper").style.backgroundColor = creativeConfigObj.floodColor;
+	document.getElementById("headerBacker").style.height = document.getElementById("headerContainer").offsetHeight + "px";
+
+	// Add boarder and set boarder color if boarderColor has a value
+	if (creativeConfigObj.boarderColor !== "" && creativeConfigObj.boarderColor !== null) {
+		var contentBorders = document.getElementsByClassName("contentBorder");
+
+		for (var i = 0; i < contentBorders.length; i++) {
+			contentBorders[i].style.display = "block";
+			contentBorders[i].style.backgroundColor = creativeConfigObj.boarderColor;
+		}
+	}
+
+	// set ad indiciator dynamic portion
+	document.getElementById("adIndicatorCopy_dynamic").innerHTML = creativeConfigObj.adIndicatorDynamicCopy;
+
+	// set background
+	document.getElementById("mobileBgImg").style.backgroundImage = "url(" + creativeConfigObj.backgroundImageURL + ")";
+
+	// set logo
+	if (creativeConfigObj.logo.logoURL !== "" && creativeConfigObj.logo.logoURL !== null) {
+		document.getElementById("mobileLogo").getElementsByTagName("img")[0].src = creativeConfigObj.logo.logoURL;
+		document.getElementById("mobileLogo").style.display = "block";
+	}
+
+	// set CTA
+	if (creativeConfigObj.cta.copy !== "" && creativeConfigObj.cta.copy !== null) {
+		if (creativeConfigObj.cta.color !== "" && creativeConfigObj.cta.color !== null) {
+			document.getElementById("mobileCtaCopy").style.color = creativeConfigObj.cta.color;
+		}
+
+		if (creativeConfigObj.cta.borderColor !== "" && creativeConfigObj.cta.borderColor !== null) {
+			document.getElementById("mobileCta").style.borderColor = creativeConfigObj.cta.borderColor;
+		}
+
+		document.getElementById("mobileCtaCopy").innerHTML = creativeConfigObj.cta.copy;
+		document.getElementById("mobileCta").style.display = "block";
+	}
+
+	// set headline copy
+	if (creativeConfigObj.copy.headline.copy !== "" && creativeConfigObj.copy.headline.copy !== null) {
+		document.getElementById("mobileHeadlineCopy").innerHTML = creativeConfigObj.copy.headline.copy;
+
+		if (creativeConfigObj.copy.headline.color !== "" && creativeConfigObj.copy.headline.color !== null) {
+			document.getElementById("mobileHeadlineCopy").style.color = creativeConfigObj.copy.headline.color;
+		}
+
+		document.getElementById("bgGrad").style.display = "block";
+		document.getElementById("mobileHeadlineCopy").style.display = "table";
+	}
+
+	// set description copy
+	if (creativeConfigObj.copy.description.copy !== "" && creativeConfigObj.copy.description.copy !== null) {
+		document.getElementById("mobileDescriptorCopy").innerHTML = creativeConfigObj.copy.description.copy;
+
+		if (creativeConfigObj.copy.description.color !== "" && creativeConfigObj.copy.description.color !== null) {
+			document.getElementById("mobileDescriptorCopy").style.color = creativeConfigObj.copy.description.color;
+		}
+
+		document.getElementById("bgGrad").style.display = "block";
+		document.getElementById("mobileDescriptorCopy").style.display = "table";
+	}
+}
+
+// Size creative area per available total area so 2:3 aspect ratio creative content will not overflow the available screen space.
+// The parameter "data" will be populated only by the response from the custom scripts "creativeResize" event.  When calling this function from manually pass "null".  When accessing the "data" parameter make sure to do a check its existance prior to accessing.
+function sizeContentArea(data) {
+
+	console.log(data);
+	console.log("siz content area -------");
+	
+	
+	var adWrapper = document.getElementById("adWrapper");
+	var adWrappoerWidth = adWrapper.offsetWidth;
+
+	var adWrappoerHeight = adWrapper.offsetHeight;
+
+	var adContainer = document.getElementById("adContainer");
+
+	var contentContainer = document.getElementById("contentContainer");
+
+	var adIndicator = document.getElementById("headerContainer");
+	var adIndicatorHeight = adIndicator.offsetHeight;
+
+	var initialWidth = adWrappoerWidth;
+
+	var initialHeight = Math.round(adWrappoerWidth * 1.5) + adIndicatorHeight;
+
+	// If sizeContentArea is called by response from the custom scripts "creativeResize" event and
+	// the creative is in a safe frame and the safe frame geom data is passed in the data parameter,
+	// use the safe frame geom data passed in to determine orientation otherwise use window.innerHeight/window.innerWidth
+	var winW = (data && typeof data.sfGeomObj !== "undefined") ? data.sfGeomObj.win.w : window.innerWidth;
+	var winH = (data && typeof data.sfGeomObj !== "undefined") ? data.sfGeomObj.win.h : window.innerHeight;
+	var determinedOrientation = (winH <= winW) ? "land" : "port";
+
+	var finalWidth;
+	var finalHeight;	// if creative content would overflow available display space reduce creative content area
+
+	if (initialHeight > adWrappoerHeight) {
+		finalWidth = Math.round(((adWrappoerHeight - adIndicatorHeight) * .66666));
+		finalHeight = adWrappoerHeight;
+	} else {
+		finalWidth = initialWidth;
+		finalHeight = initialHeight;
+	}
+
+	// adContainer.style.width = finalWidth + "px";
+	adContainer.style.width = (determinedOrientation === "port" && creativeConfigObj.portraitFitStyle === "fullWidth") ? "100%" : finalWidth + "px" ;
+	adContainer.style.height = finalHeight + "px";
+	contentContainer.style.height = (finalHeight - adIndicatorHeight) + "px";
+}
+
+function positionCreativeElements() {
+	verticalyAlignText(document.getElementById("adIndicatorCopy"));
+	verticalyAlignText(document.getElementById("mobileCtaCopy"));
+}
+
+function addEventListeners() {
+	// USE_RESIZE_LISTENER should only be set to true during local testing
+	// NYT does not allow resize listeners to be set in the creative JS to keep load on the environment to a minimum.
+	if (USE_RESIZE_LISTENER === true) {
+		window.addEventListener("resize", sizeContentArea, false)
+	}
+
+	document.getElementById("mobileCta").addEventListener("click", onCtaClk, false);
+	document.getElementById("mobileLogo").addEventListener("click", onLogoClk, false);
+	document.getElementById("mobileHeadlineCopy").addEventListener("click", onMessagingClk, false);
+	document.getElementById("mobileDescriptorCopy").addEventListener("click", onMessagingClk, false);
+
+	var bgClks = document.getElementsByClassName("genClk");
+	for (var i = 0; i < bgClks.length; i++) {
+		bgClks[i].addEventListener("click", onBgClk, false);
+	}
+}
+
+
+/*-----------------------------*/
+/*-----> EVENT LISTENERS <-----*/
+/*-----------------------------*/
+
+/*-----> CLICK OUTS <-----*/
+function onCtaClk(e) {
+	EB.clickthrough('CTA_Click');
+}
+
+function onLogoClk(e) {
+	EB.clickthrough('Logo_Click');
+}
+
+function onMessagingClk(e) {
+	EB.clickthrough();
+}
+
+function onBgClk(e) {
+	EB.clickthrough();
+}
+
+
+/*------------------------------*/
+/*-----> HELPER FUNCTIONS <-----*/
+/*------------------------------*/
+// Items must be on stage prior to being passed to this function for proper alignemnt
+function verticalyAlignText(obj) {
+	var parentContainerHeight = obj.parentNode.offsetHeight;
+	var copyContainerHeight = obj.offsetHeight;
+	var pushMargin = (Math.floor((parentContainerHeight - copyContainerHeight) / 2)) + "px";
+
+	obj.style.marginTop = pushMargin;
+}
+
+function removeArryElem(ary, elm){
+	var index = ary.indexOf(elm);
+
+	if(index !== -1){
+		ary.splice(index, 1);
+	}
+}
+
+/*------------------------------*/
+/*-----> BASE FORMAT CODE <-----*/
+/*------------------------------*/
+/*******************
+UTILITIES
+*******************/
+function setCreativeVersion() {
+	// below comment by MSD
+	/*
+	EB._sendMessage("setCreativeVersion", {
+        creativeId: creativeId,
+        creativeVersion: creativeVersion,
+        creativeLastModified: lastModified,
+        uid: uid
+    });
+	*/
+
+	// START ADD BY MSD
+	sendMessage("setCreativeVersion", {
+		creativeId: creativeId + " - " + templateName,
+		creativeVersion: creativeVersion,
+		creativeLastModified: lastModified,
+		uid: uid
+	});
+	// END ADD BY MSD
+}
+
+function onPageScroll(event) {
+	// use scrollPos anywhere to know the current x/y coordinates.
+	scrollPos.x = event.scrollXPercent;
+	scrollPos.y = event.scrollYPercent;
+}
+
+/*********************************
+HTML5 Event System - Do Not Modify
+*********************************/
+
+
+var listenerQueue;
+var creativeIFrameId;
+
+function sendMessage(type, data) {
+
+	//note: the message type we're sending is also the name of the function inside
+	//		the custom script's messageHandlers object, so the case must match.
+
+	if (!data.type) data.type = type;
+	EB._sendMessage(type, data);
+}
+
+function addCustomScriptEventListener(eventName, callback, interAd) {
+	listenerQueue = listenerQueue || {};
+	var data = {
+		uid: uid,
+		listenerId: Math.ceil(Math.random() * 1000000000),
+		eventName: eventName,
+		interAd: !!(interAd),
+		creativeIFrameId: creativeIFrameId
+	};
+	sendMessage("addCustomScriptEventListener", data);
+	data.callback = callback;
+	listenerQueue[data.listenerId] = data;
+	return data.listenerId;
+}
+
+function dispatchCustomScriptEvent(eventName, params) {
+	params = params || {};
+	params.uid = uid;
+	params.eventName = eventName;
+	params.creativeIFrameId = creativeIFrameId;
+	sendMessage("dispatchCustomScriptEvent", params);
+}
+
+function removeCustomScriptEventListener(listenerId) {
+	var params = {
+		uid: uid,
+		listenerId: listenerId,
+		creativeIFrameId: creativeIFrameId
+	};
+
+	sendMessage("removeCustomScriptEventListener", params);
+	if (listenerQueue[listenerId])
+		delete listenerQueue[listenerId];
+}
+
+function eventManager(event) {
+
+	var msg;
+	if (typeof event == "object" && event.data) {
+		msg = JSON.parse(event.data);
+
+	} else {
+		// this is safe frame.
+		msg = {
+			type: event.type,
+			data: event
+		};
+	}
+	if (msg.type && msg.data && (!uid || (msg.data.uid && msg.data.uid == uid))) {
+		switch (msg.type) {
+			case "sendCreativeId":
+				creativeIFrameId = msg.data.creativeIFrameId;
+				addCustomScriptEventListener('pageScroll', onPageScroll);
+				addCustomScriptEventListener('creativeResize', sizeContentArea);
+				sendMessage("dispatchScrollPos", {
+					uid: uid
+				});
+				if (creativeContainerReady)
+					creativeContainerReady();
+				break;
+			case "eventCallback": // Handle Callback
+				var list = msg.data.listenerIds;
+				var length = list.length;
+				for (var i = 0; i < length; i++) {
+					try {
+						var t = listenerQueue[list[i]];
+						if (!t) continue;
+						t.callback(msg.data);
+					} catch (e) {}
+				}
+				break;
+		}
+	}
+}
+
+window.addEventListener("message", function() {
+	try {
+		eventManager.apply(this, arguments);
+	} catch (e) {}
+}, false);
+
+
+/*************************************
+End HTML5 Event System - Do Not Modify
+*************************************/
+
+window.addEventListener("load", checkIfAdKitReady);
+
+</script>
+
+</body>
+</html>
